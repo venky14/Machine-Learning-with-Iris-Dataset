@@ -1,6 +1,5 @@
 # Machine Learning with Iris Dataset
-[![Build Status](https://travis-ci.org/boennemann/badges.svg?branch=master)](https://travis-ci.org/boennemann/badges) ![Python](https://img.shields.io/badge/python-2.x-orange.svg)
-![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
+![Python](https://img.shields.io/badge/python-2.x-orange.svg)
 ![Type](https://img.shields.io/badge/Machine-Learning-red.svg) ![Type](https://img.shields.io/badge/Type-Supervised-yellow.svg)
 ![Status](https://img.shields.io/badge/Status-Completed-yellowgreen.svg)
 
