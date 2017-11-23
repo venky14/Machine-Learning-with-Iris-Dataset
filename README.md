@@ -10,7 +10,7 @@ The dataset contains: 3 classes (different Iris species) with 50 samples each, a
 
 One species, Iris Setosa, is "linearly separable" from the other two. This means that we can draw a line (or a hyperplane in higher-dimensional spaces) between Iris Setosa samples and samples corresponding to the other two species.
 
-Predicted Attribute: Species of Iris plant.
+Predicted Attribute: Different Species of Iris plant.
 
 ## Purpose
 The purpose of this project was to gain introductory exposure to Machine Learning Classification concepts along with data visualization. The project makes heavy use of Scikit-Learn, Pandas and Data Visualization Libraries.
