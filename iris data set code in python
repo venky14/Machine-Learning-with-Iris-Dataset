@@ -1,0 +1,79 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jun  7 15:21:25 2019
+
+@author: USER
+"""
+
+import numpy as np 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+import matplotlib
+from sklearn.model_selection import train_test_split
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+import seaborn as sns
+
+df= pd.read_csv('C:\\Users\\USER\\Desktop\\iris.csv')
+t=df.cov()
+df.Species[df.Species == 'Iris-setosa'] = 1
+df.Species[df.Species == 'Iris-versicolor'] = 2
+df.Species[df.Species == 'Iris-virginica'] = 3
+y=df['Species']
+df = df.drop(["Species"], axis=1)
+X_train,X_test,y_train,y_test=train_test_split(df,y,test_size=0.4)
+mean=df.mean()
+sd=df.std()
+# implemeting pair plot
+sns.set(style="ticks", color_codes=True)
+iris = sns.load_dataset("iris")
+g = sns.pairplot(iris)
+g = sns.pairplot(iris, hue="species")
+
+
+# implementing using naive bayes
+q=df.SepalLengthCm[df.SepalLengthCm == '5.1'] 
+from sklearn.naive_bayes import GaussianNB
+gnb = GaussianNB()
+y_train=y_train.astype('int')
+y_test=y_test.astype('int') 
+gnb.fit(X_train, y_train) 
+y_pred = gnb.predict(q)
+from sklearn import metrics
+print("Gaussian Naive Bayes model accuracy(in %):", metrics.accuracy_score(y_test, y_pred))
+neg_class_prob_sorted = df.feature_log_prob_[0, :].argsort()
+pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
+
+print(np.take(count_vect.get_feature_names(), neg_class_prob_sorted[:10]))
+print(np.take(count_vect.get_feature_names(), pos_class_prob_sorted[:10]))
+
+# count of every type
+import matplotlib.pyplot as plt
+sns.countplot(x='species',data=iris, palette="OrRd")
+
+# Create heatmap
+sns.heatmap(iris.corr(),cmap="YlGnBu", linecolor='white', linewidths=1)
+
+sns.regplot(x='petal_width', y='petal_length', data=iris)
+from sklearn import tree
+y_test=y_test.astype('int')
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(df,y)
+tree.plot_tree(clf.fit(X_train,y_train))
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+StandardScaler(copy=True, with_mean=True, with_std=True)
+print(scaler.fit(df))
+print(scaler.mean_)
+s=scaler.transform(df)
+sample=s
+cov_matrix=np.matmul(sample.T,s)
+print(cov_matrix)
+# finding LOF
+
+sorted(df)
+q1, q3= np.percentile(df,[25,75])
+iqr = q3 - q1
+lower_bound = q1 -(1.5 * iqr) 
+upper_bound = q3 +(1.5 * iqr) 
