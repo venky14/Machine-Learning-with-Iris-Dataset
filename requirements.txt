@@ -1,4 +1,4 @@
-# this version or above
+# this version or latest
 ipykernel==4.2.2
 ipython==4.1.1
 ipython-genutils==0.1.0
